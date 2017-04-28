@@ -14,7 +14,7 @@ const ItemDataList = (props) => {
           </div>
         <div id="panel-body-collapse" className="collapse">
           <div className="list-group">
-            {props.itemList.map((item) => <Item key={item.name} item={item} />)}
+            {props.itemList.map((item) => <Item key={item.name} item={item} addItemToShoppingList={props.addItemToShoppingList}/>)}
           </div>
         </div>
       </div>

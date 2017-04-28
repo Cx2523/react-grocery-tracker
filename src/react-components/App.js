@@ -13,21 +13,32 @@ class App extends React.Component {
           {
             name: "Bread",
             cost: 3,
-            inShoppingList: false
+            inShoppingList: 0
           },
           {
             name: "E",
             cost: 5,
-            inShoppingList: false
+            inShoppingList: 0
           },
           {
             name: "Yogurt",
             cost: 7,
-            inShoppingList: false
+            inShoppingList: 0
           }
         ]
       }
     this.newItemSubmit = this.newItemSubmit.bind(this);
+    this.addItemToShoppingList = this.addItemToShoppingList.bind(this);
+  }
+
+  addItemToShoppingList(itemName){
+    this.setState((prevState) => {
+      prevState.itemList.find((item) => {
+        return item.name === itemName;
+      }).inShoppingList++;
+    });
+    console.log(this.state);
+
   }
 
   newItemSubmit(event, newItemObj){
@@ -35,6 +46,7 @@ class App extends React.Component {
     this.setState((prevState) => {
       prevState.itemList.push(newItemObj);
     });
+
   }
 
   render() {
@@ -43,7 +55,7 @@ class App extends React.Component {
         <div className="row">
           <div className="col-xs-6">
             <NewItemInput newItemSubmit={this.newItemSubmit}/>
-            <ItemDataList itemList={this.state.itemList}/>
+            <ItemDataList itemList={this.state.itemList} addItemToShoppingList={this.addItemToShoppingList}/>
           </div>
           <div className="col-xs-6">
             <ShoppingList itemList={this.state.itemList}/>
