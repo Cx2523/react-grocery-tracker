@@ -42,13 +42,13 @@ module.exports = {
         // minify: {
         //   collapseWhitespace: true
         // },
-        hash: true,
+        hash: false,
         template: './src/template.html',
         filename: 'index.html'
       }
     ),
     new ExtractTextWebpackPlugin({
-      filename: '/css/[name].css',
+      filename: './css/[name].css',
       disable: !isProdEnv,
       allChunks: true
     }),

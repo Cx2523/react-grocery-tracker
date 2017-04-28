@@ -2,6 +2,6 @@ import css from './style.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Example from './react-components/Example.js';
+import App from './react-components/App.js';
 
-ReactDOM.render(<Example/>, mountNode);
+ReactDOM.render(<App/>, mountNode);
