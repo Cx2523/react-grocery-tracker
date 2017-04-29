@@ -3,7 +3,7 @@ import ItemDataList from './ItemDataList.js';
 import NewItemInput from './NewItemInput.js';
 import ShoppingList from './ShoppingList.js';
 
-class App extends React.Component {
+class Lists extends React.Component {
 
   constructor(props) {
     super();
@@ -67,6 +67,4 @@ class App extends React.Component {
 
 }
 
-
-
-export default App;
+export default Lists;
