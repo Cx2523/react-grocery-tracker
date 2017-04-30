@@ -10,8 +10,10 @@ const Item = (props) => {
       <div className="control-button"><span className="glyphicon glyphicon-plus" onClick={() => {
         props.addItemToShoppingList(props.item.name);
       }}></span></div>
+      <div className="control-button"><span className="glyphicon glyphicon-minus" onClick={() => {
+        props.subtractItemFromShoppingList(props.item.name);
+      }}></span></div>
       <div className="control-button"><span className="glyphicon glyphicon-cog"></span></div>
-      <div className="control-button"><span className="glyphicon glyphicon-remove"></span></div>
     </div>
   );
 }

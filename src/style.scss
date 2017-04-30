@@ -12,9 +12,21 @@
 .glyphicon-plus {
   color: green;
 }
-.glyphicon-remove {
+.glyphicon-minus {
   color: red;
 }
 .item-info {
   width:33%;
+}
+.glyphicon-check {
+  color: green;
+}
+.table-striped{
+  width:100%;
+  td, th {
+    text-align: center;
+  }
+  tfoot{
+    border-top: 2px solid black;
+  }
 }

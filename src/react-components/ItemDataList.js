@@ -1,7 +1,6 @@
 import React from 'react';
 import Item from './Item.js';
 
-
 //This is the master list of Items
 const ItemDataList = (props) => {
   return (
@@ -14,7 +13,9 @@ const ItemDataList = (props) => {
           </div>
         <div id="panel-body-collapse" className="collapse">
           <div className="list-group">
-            {props.itemList.map((item) => <Item key={item.name} item={item} addItemToShoppingList={props.addItemToShoppingList}/>)}
+            {props.itemList.map((item) => <Item key={item.name} item={item} addItemToShoppingList={props.addItemToShoppingList}
+            subtractItemFromShoppingList={props.subtractItemFromShoppingList}
+            />)}
           </div>
         </div>
       </div>

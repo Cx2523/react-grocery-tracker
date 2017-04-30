@@ -15,14 +15,17 @@ const InputForm = (props) => {
       </div>
       <div className='form-group'>
         <label>Cost per Unit</label>
-        <input
-          type="number"
-          className="form-control"
-          placeholder="Cost"
-          name="cost"
-          value = {props.item.cost}
-          onChange = {props.onChange} />
-      </div>
+          <div className="input-group">
+            <div className="input-group-addon">$</div>
+            <input
+              type="number"
+              className="form-control"
+              placeholder="Cost"
+              name="cost"
+              value = {props.item.cost}
+              onChange = {props.onChange} />
+          </div>
+        </div>
       <div className="checkbox">
         <label>
           <input

@@ -19,10 +19,30 @@ const ShoppingList = (props) => {
 
   return (
     <div>
-      <div className="list-group">
-        {shoppingList.map((item) => <ShoppingItem key={item.name} item={item} />)}
-      </div>
-      <h1>Total: {totalCost}</h1>
+      <table className="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Cost per Unit</th>
+            <th>Cost</th>
+            <th>Purchased</th>
+          </tr>
+        </thead>
+        <tbody>
+          {shoppingList.map((item) => <ShoppingItem key={item.name} item={item} />)}
+        </tbody>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>Total Cost:</td>
+            <td>{totalCost}</td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+
     </div>
   );
 }

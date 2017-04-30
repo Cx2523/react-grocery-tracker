@@ -29,6 +29,7 @@ class Lists extends React.Component {
       }
     this.newItemSubmit = this.newItemSubmit.bind(this);
     this.addItemToShoppingList = this.addItemToShoppingList.bind(this);
+    this.subtractItemFromShoppingList = this.subtractItemFromShoppingList.bind(this);
   }
 
   addItemToShoppingList(itemName){
@@ -37,7 +38,19 @@ class Lists extends React.Component {
         return item.name === itemName;
       }).inShoppingList++;
     });
-    console.log(this.state);
+  }
+
+  subtractItemFromShoppingList(itemName){
+    this.setState((prevState) => {
+      let item =
+          prevState.itemList.find((item) => {
+            return item.name === itemName;
+          });
+      //don't allow negative quantities
+      if (item.inShoppingList > 0 ){
+        item.inShoppingList--;
+        }
+    });
 
   }
 
@@ -55,7 +68,9 @@ class Lists extends React.Component {
         <div className="row">
           <div className="col-xs-6">
             <NewItemInput newItemSubmit={this.newItemSubmit}/>
-            <ItemDataList itemList={this.state.itemList} addItemToShoppingList={this.addItemToShoppingList}/>
+            <ItemDataList itemList={this.state.itemList} addItemToShoppingList={this.addItemToShoppingList}
+            subtractItemFromShoppingList={this.subtractItemFromShoppingList}
+            />
           </div>
           <div className="col-xs-6">
             <ShoppingList itemList={this.state.itemList}/>
@@ -64,7 +79,6 @@ class Lists extends React.Component {
       </div>
     )
   }
-
 }
 
 export default Lists;
