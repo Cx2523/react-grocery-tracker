@@ -25,11 +25,26 @@ class Lists extends React.Component {
             cost: 7,
             inShoppingList: 0
           }
-        ]
-      }
+        ],
+      showHideEditList: "hidden",
+      adjustShoppingList: "col-xs-8 col-xs-offset-2"
+    }
+
     this.newItemSubmit = this.newItemSubmit.bind(this);
     this.addItemToShoppingList = this.addItemToShoppingList.bind(this);
     this.subtractItemFromShoppingList = this.subtractItemFromShoppingList.bind(this);
+    this.toggleListEdit = this.toggleListEdit.bind(this);
+  }
+
+  toggleListEdit() {
+    console.log(this.state.showHideEditList);
+    this.setState((prevState) => {
+      if (prevState.showHideEditList === "hidden") {
+        return {showHideEditList: "show", adjustShoppingList: "col-xs-offset-1 col-xs-6" }; //show
+      } else {
+        return {showHideEditList: "hidden", adjustShoppingList: "col-xs-8 col-xs-offset-2"}; //hide
+      }
+    })
   }
 
   addItemToShoppingList(itemName){
@@ -66,14 +81,14 @@ class Lists extends React.Component {
     return(
       <div>
         <div className="row">
-          <div className="col-xs-6">
-            <NewItemInput newItemSubmit={this.newItemSubmit}/>
-            <ItemDataList itemList={this.state.itemList} addItemToShoppingList={this.addItemToShoppingList}
-            subtractItemFromShoppingList={this.subtractItemFromShoppingList}
-            />
+          <div className={`col-xs-5 edit-list-container ${this.state.showHideEditList}`}>
+              <NewItemInput newItemSubmit={this.newItemSubmit}/>
+              <ItemDataList itemList={this.state.itemList} addItemToShoppingList={this.addItemToShoppingList}
+              subtractItemFromShoppingList={this.subtractItemFromShoppingList}
+              />
           </div>
-          <div className="col-xs-6">
-            <ShoppingList itemList={this.state.itemList}/>
+          <div className={`shopping-list ${this.state.adjustShoppingList}`} >
+            <ShoppingList toggleListEdit={this.toggleListEdit} itemList={this.state.itemList}/>
           </div>
         </div>
       </div>

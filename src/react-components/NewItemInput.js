@@ -35,10 +35,12 @@ class NewItemInput extends React.Component {
 
   render(){
     return (
-      <div className="panel panel-info">
+      <div className="panel panel-default">
         <div className="panel-heading">
           <a href="#input-body-collapse" data-toggle="collapse">
-            <h3>Create New Item</h3>
+            <div>
+              Create New Item
+            </div>
           </a>
         </div>
         <div id="input-body-collapse" className="collapse">

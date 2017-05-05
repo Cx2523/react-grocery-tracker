@@ -19,6 +19,7 @@ const ShoppingList = (props) => {
 
   return (
     <div>
+      <h2>Shopping List <span onClick={props.toggleListEdit} className="glyphicon glyphicon-pencil"></span></h2>
       <table className="table table-striped table-hover">
         <thead>
           <tr>

@@ -5,13 +5,11 @@ import Item from './Item.js';
 const ItemDataList = (props) => {
   return (
     <div>
-      <div className="panel panel-success">
+      <div className="panel panel-default">
         <div className="panel-heading">
-          <a href="#panel-body-collapse" data-toggle="collapse">
-            <h3>Item List</h3>
-          </a>
+            <h5>Item List</h5>
           </div>
-        <div id="panel-body-collapse" className="collapse">
+        <div className="panel-body">
           <div className="list-group">
             {props.itemList.map((item) => <Item key={item.name} item={item} addItemToShoppingList={props.addItemToShoppingList}
             subtractItemFromShoppingList={props.subtractItemFromShoppingList}
