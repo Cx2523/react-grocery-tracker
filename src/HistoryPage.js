@@ -1,8 +1,10 @@
 import React from 'react';
+import ShoppingHistory from './react-components/ShoppingHistory.js';
+
 
 const HistoryPage = () => {
   return (
-    <div>This is the HISTORY page</div>
+    <ShoppingHistory />
   );
 }
 
